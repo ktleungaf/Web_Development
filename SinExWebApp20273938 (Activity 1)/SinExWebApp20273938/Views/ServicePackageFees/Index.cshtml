@@ -1,0 +1,50 @@
+﻿@model IEnumerable<SinExWebApp20273938.Models.ServicePackageFee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Service/Package Fees</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PackageType.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServiceType.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MinimumFee)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServiceType.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PackageType.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MinimumFee)
+        </td>
+        
+    </tr>
+}
+
+</table>
+
+<h4>Note : </h4>
+<ol type="1">
+    <li>All the amounts are stated in Chinese Yuan (CNY) here.</li>
+    <li>If a package is over the weight limit for that package type, a ¥500 penalty charge should be applied to each overweight package. There should be no weight limit for the Customer package type.</li>
+</ol>
